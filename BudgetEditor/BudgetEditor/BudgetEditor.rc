@@ -105,6 +105,15 @@ BEGIN
     EDITTEXT        IDC_EDIT_TOTAL,58,206,96,14,ES_AUTOHSCROLL | WS_DISABLED
 END
 
+IDD_DIALOG_DIAGRAM DIALOGEX 0, 0, 395, 205
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Incomes and outgoings"
+FONT 8, "MS Shell Dlg", 400, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,339,184,50,14
+    CONTROL         "Custom1",IDC_CHARTCTRL,"ChartCtrl",WS_CLIPCHILDREN | WS_TABSTOP,7,7,381,174
+END
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -129,6 +138,14 @@ BEGIN
         TOPMARGIN, 7
         BOTTOMMARGIN, 246
     END
+
+    IDD_DIALOG_DIAGRAM, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 388
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 198
+    END
 END
 #endif    // APSTUDIO_INVOKED
 
@@ -148,6 +165,11 @@ BEGIN
     0
 END
 
+IDD_DIALOG_DIAGRAM AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
 #endif    // Hungarian (Hungary) resources
 /////////////////////////////////////////////////////////////////////////////
 
@@ -158,6 +180,53 @@ END
 #if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
 LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 #pragma code_page(1252)
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 243, 62
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "About BudgetEditor"
+FONT 8, "MS Shell Dlg", 0, 0, 0x1
+BEGIN
+    ICON            IDR_MAINFRAME,IDC_STATIC,14,14,21,20
+    LTEXT           "BudgetEditor, Version 1.0",IDC_STATIC,42,14,114,8,SS_NOPREFIX
+    LTEXT           "Mészáros Viktor (MEVXAAT.SZE), 2020.",IDC_STATIC,42,26,134,8
+    DEFPUSHBUTTON   "OK",IDOK,186,41,50,14,WS_GROUP
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO
+BEGIN
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 236
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 55
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// AFX_DIALOG_LAYOUT
+//
+
+IDD_ABOUTBOX AFX_DIALOG_LAYOUT
+BEGIN
+    0
+END
+
 
 /////////////////////////////////////////////////////////////////////////////
 //
@@ -255,7 +324,7 @@ BEGIN
         MENUITEM "&Save\tCtrl+S",               ID_FILE_SAVE
         MENUITEM "Save &As...",                 ID_FILE_SAVE_AS
         MENUITEM SEPARATOR
-        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1, GRAYED
+        MENUITEM "Recent File",                 ID_FILE_MRU_FILE1
         MENUITEM SEPARATOR
         MENUITEM "E&xit",                       ID_APP_EXIT
     END
@@ -277,6 +346,7 @@ BEGIN
         MENUITEM "&Add new summary...",         ID_BUDGET_ADDNEWSUMMARY
         MENUITEM "&Edit selected summary...",   ID_BUDGET_EDITSUMMARY
         MENUITEM "&Delete selected summary...", ID_BUDGET_DELETESUMMARY
+        MENUITEM "&See incomes and outgoings per year...", ID_BUDGET_SEEINCOMESANDOUTGOINGSPERYEAR
     END
     POPUP "&Help"
     BEGIN
@@ -305,23 +375,6 @@ BEGIN
     VK_INSERT,      ID_EDIT_PASTE,          VIRTKEY, SHIFT
     VK_F6,          ID_NEXT_PANE,           VIRTKEY 
     VK_F6,          ID_PREV_PANE,           VIRTKEY, SHIFT
-END
-
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// Dialog
-//
-
-IDD_ABOUTBOX DIALOGEX 0, 0, 243, 62
-STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "About BudgetEditor"
-FONT 8, "MS Shell Dlg", 0, 0, 0x1
-BEGIN
-    ICON            IDR_MAINFRAME,IDC_STATIC,14,14,21,20
-    LTEXT           "BudgetEditor, Version 1.0",IDC_STATIC,42,14,114,8,SS_NOPREFIX
-    LTEXT           "Mészáros Viktor (MEVXAAT.SZE), 2020.",IDC_STATIC,42,26,134,8
-    DEFPUSHBUTTON   "OK",IDOK,186,41,50,14,WS_GROUP
 END
 
 
@@ -361,36 +414,6 @@ BEGIN
     BEGIN
         VALUE "Translation", 0x409, 1200
     END
-END
-
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// DESIGNINFO
-//
-
-#ifdef APSTUDIO_INVOKED
-GUIDELINES DESIGNINFO
-BEGIN
-    IDD_ABOUTBOX, DIALOG
-    BEGIN
-        LEFTMARGIN, 7
-        RIGHTMARGIN, 236
-        TOPMARGIN, 7
-        BOTTOMMARGIN, 55
-    END
-END
-#endif    // APSTUDIO_INVOKED
-
-
-/////////////////////////////////////////////////////////////////////////////
-//
-// AFX_DIALOG_LAYOUT
-//
-
-IDD_ABOUTBOX AFX_DIALOG_LAYOUT
-BEGIN
-    0
 END
 
 

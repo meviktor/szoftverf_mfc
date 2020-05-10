@@ -45,6 +45,7 @@ public:
 	afx_msg void OnNewSummary();
 	afx_msg void OnEditSummary();
 	afx_msg void OnDeleteSummary();
+	afx_msg void OnSeeIncomesOutgoingsPerYear();
 };
 
 #ifndef _DEBUG  // debug version in BudgetEditorView.cpp

@@ -114,6 +114,7 @@
       <Optimization>Disabled</Optimization>
       <PreprocessorDefinitions>_WINDOWS;_DEBUG;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <RuntimeTypeInfo>true</RuntimeTypeInfo>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -189,9 +190,41 @@
     <ClInclude Include="BudgetEditor.h" />
     <ClInclude Include="BudgetEditorDoc.h" />
     <ClInclude Include="BudgetEditorView.h" />
+    <ClInclude Include="ChartAxis.h" />
+    <ClInclude Include="ChartAxisLabel.h" />
+    <ClInclude Include="ChartBalloonLabel.h" />
+    <ClInclude Include="ChartBarSerie.h" />
+    <ClInclude Include="ChartCandlestickSerie.h" />
+    <ClInclude Include="ChartCrossHairCursor.h" />
+    <ClInclude Include="ChartCtrl.h" />
+    <ClInclude Include="ChartCursor.h" />
+    <ClInclude Include="ChartDateTimeAxis.h" />
+    <ClInclude Include="ChartDragLineCursor.h" />
+    <ClInclude Include="ChartFont.h" />
+    <ClInclude Include="ChartGanttSerie.h" />
+    <ClInclude Include="ChartGradient.h" />
+    <ClInclude Include="ChartGrid.h" />
+    <ClInclude Include="ChartLabel.h" />
+    <ClInclude Include="ChartLegend.h" />
+    <ClInclude Include="ChartLineSerie.h" />
+    <ClInclude Include="ChartLogarithmicAxis.h" />
+    <ClInclude Include="ChartMouseListener.h" />
+    <ClInclude Include="ChartPointsArray.h" />
+    <ClInclude Include="ChartPointsSerie.h" />
+    <ClInclude Include="ChartScrollBar.h" />
+    <ClInclude Include="ChartSerie.h" />
+    <ClInclude Include="ChartSerieBase.h" />
+    <ClInclude Include="ChartSeriesMouseListener.h" />
+    <ClInclude Include="ChartStandardAxis.h" />
+    <ClInclude Include="ChartString.h" />
+    <ClInclude Include="ChartSurfaceSerie.h" />
+    <ClInclude Include="ChartTitle.h" />
+    <ClInclude Include="ChartXYSerie.h" />
     <ClInclude Include="ChildFrm.h" />
     <ClInclude Include="EditCategoryListDlg.h" />
+    <ClInclude Include="IncomesOutgoingsDlg.h" />
     <ClInclude Include="MainFrm.h" />
+    <ClInclude Include="PointsOrdering.h" />
     <ClInclude Include="Resource.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
@@ -201,8 +234,32 @@
     <ClCompile Include="BudgetEditor.cpp" />
     <ClCompile Include="BudgetEditorDoc.cpp" />
     <ClCompile Include="BudgetEditorView.cpp" />
+    <ClCompile Include="ChartAxis.cpp" />
+    <ClCompile Include="ChartAxisLabel.cpp" />
+    <ClCompile Include="ChartBarSerie.cpp" />
+    <ClCompile Include="ChartCandlestickSerie.cpp" />
+    <ClCompile Include="ChartCrossHairCursor.cpp" />
+    <ClCompile Include="ChartCtrl.cpp" />
+    <ClCompile Include="ChartCursor.cpp" />
+    <ClCompile Include="ChartDateTimeAxis.cpp" />
+    <ClCompile Include="ChartDragLineCursor.cpp" />
+    <ClCompile Include="ChartFont.cpp" />
+    <ClCompile Include="ChartGanttSerie.cpp" />
+    <ClCompile Include="ChartGradient.cpp" />
+    <ClCompile Include="ChartGrid.cpp" />
+    <ClCompile Include="ChartLegend.cpp" />
+    <ClCompile Include="ChartLineSerie.cpp" />
+    <ClCompile Include="ChartLogarithmicAxis.cpp" />
+    <ClCompile Include="ChartPointsSerie.cpp" />
+    <ClCompile Include="ChartScrollBar.cpp" />
+    <ClCompile Include="ChartSerie.cpp" />
+    <ClCompile Include="ChartStandardAxis.cpp" />
+    <ClCompile Include="ChartSurfaceSerie.cpp" />
+    <ClCompile Include="ChartTitle.cpp" />
+    <ClCompile Include="ChartXYSerie.cpp" />
     <ClCompile Include="ChildFrm.cpp" />
     <ClCompile Include="EditCategoryListDlg.cpp" />
+    <ClCompile Include="IncomesOutgoingsDlg.cpp" />
     <ClCompile Include="MainFrm.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
@@ -213,6 +270,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="BudgetEditor.reg" />
+    <None Include="ChartBalloonLabel.inl" />
+    <None Include="ChartLabel.inl" />
+    <None Include="ChartPointsArray.inl" />
+    <None Include="ChartSerieBase.inl" />
     <None Include="res\BudgetEditor.rc2" />
   </ItemGroup>
   <ItemGroup>

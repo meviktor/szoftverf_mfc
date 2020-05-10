@@ -13,6 +13,7 @@
 #include "BudgetEditorView.h"
 #include "EditCategoryListDlg.h"
 #include "AddOrEditBudgetSummaryDlg.h"
+#include "IncomesOutgoingsDlg.h"
 
 #ifdef _DEBUG
 #define new DEBUG_NEW
@@ -28,6 +29,7 @@ BEGIN_MESSAGE_MAP(CBudgetEditorView, CListView)
 	ON_COMMAND(ID_BUDGET_ADDNEWSUMMARY, &CBudgetEditorView::OnNewSummary)
 	ON_COMMAND(ID_BUDGET_EDITSUMMARY, &CBudgetEditorView::OnEditSummary)
 	ON_COMMAND(ID_BUDGET_DELETESUMMARY, &CBudgetEditorView::OnDeleteSummary)
+	ON_COMMAND(ID_BUDGET_SEEINCOMESANDOUTGOINGSPERYEAR, &CBudgetEditorView::OnSeeIncomesOutgoingsPerYear)
 END_MESSAGE_MAP()
 
 // CBudgetEditorView construction/destruction
@@ -238,7 +240,7 @@ void CBudgetEditorView::OnDeleteSummary()
 		int askDlgRes = MessageBox(
 			_T("Are you sure you want do delete the selected summary?"),
 			_T("Delete selected summary"),
-			MB_YESNO | MB_ICONWARNING | MB_APPLMODAL
+			MB_YESNO | MB_ICONQUESTION | MB_APPLMODAL
 		);
 		if (askDlgRes == IDYES) {
 			listControl.DeleteItem(selectedRow);
@@ -255,4 +257,20 @@ void CBudgetEditorView::OnDeleteSummary()
 			MB_OK | MB_ICONINFORMATION | MB_APPLMODAL
 		);
 	}
+}
+
+
+void CBudgetEditorView::OnSeeIncomesOutgoingsPerYear()
+{
+	if (GetDocument()->m_BudgetSummaries.GetSize() == 0) {
+		MessageBox(
+			_T("You must add at least one budget summary to watch the diagram."),
+			_T("Budget summary needed"),
+			MB_OK | MB_ICONINFORMATION | MB_APPLMODAL
+		);
+		return;
+	}
+	IncomesOutgoingsDlg dialog;
+	dialog.m_BudgetSummaries = &(GetDocument()->m_BudgetSummaries);
+	int res = dialog.DoModal();
 }
